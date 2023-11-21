@@ -68,3 +68,4 @@ def callback_handler(call):
 bot.polling(non_stop=True)
 шлюхи твари
 гниды
+оормоорр
