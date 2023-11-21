@@ -66,3 +66,4 @@ def callback_handler(call):
         bot.send_message(call.message.chat.id, 'Выберите породу кролика')
 
 bot.polling(non_stop=True)
+шлюхи твари
