@@ -52,8 +52,10 @@ def menu(message):
         btn22 = types.InlineKeyboardButton('Обезьяна(Скоро)', callback_data='btn22')
         btn23 = types.InlineKeyboardButton('Шиншилла(Скоро)', callback_data='btn23')
         mark.row(btn22, btn23)
+        btn24 = types.InlineKeyboardButton('⬅️В меню', callback_data='btn24')
+        mark.row(btn24)
         bot.send_message(message.chat.id, 'Выбери питомца, который тебя интересует:', reply_markup=mark)
-    elif message.text == 'О боте(Скоро)':
+    elif message.text == 'Инструкция(Скоро)':
         bot.send_message(message.chat.id, 'about', reply_markup=markup)
     elif message.text == 'Поддержка(Скоро)':
         bot.send_message(message.chat.id, 'donate', reply_markup=markup)
@@ -62,8 +64,20 @@ def menu(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_handler(call):
+    if call.data == 'btn24':
+        bot.send_message(call.message.chat.id, 'Выбрать питомца - Выбери блять питомца\n \nИнструкция - смотри как че делать\n \nПоддержка - тут деняк надо скиунть\n \nМой питомец - пока в процессе разработки')
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_handler(call):
     if call.data == 'btn1':
+        markup = types.InlineKeyboardMarkup()
+        btn1 = types.InlineKeyboardButton('мелкий', callback_data='btn111')
+        btn2 = types.InlineKeyboardButton('средний', callback_data='btn112')
+        btn3 = types.InlineKeyboardButton('большой', callback_data='btn113')
+        btn4 = types.InlineKeyboardButton('очень большой', callback_data='btn114')
+        btn5 = types.InlineKeyboardButton('⬅️Назад', callback_data = 'btn115')
+        markup.add(btn1, btn2, btn3)
         bot.send_message(call.message.chat.id, 'Выберите породу кролика')
+    elif call.data == 
 
 bot.polling(non_stop=True)
-Я В АХУЕ
